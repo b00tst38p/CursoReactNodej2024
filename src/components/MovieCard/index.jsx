@@ -6,8 +6,14 @@ const MovieCard = (props) => {
     const { titulo, anio, id } = props.pelicula
     return (
         <div>
-            <h3>titulo</h3>
-            <p>anio</p>
+            <Link to={`/movie/${id}`} style={{ textDecoration: 'none' }}>
+                <Card>
+                    <CardHeader
+                        title={titulo}
+                        subheader={anio}
+                    />
+                </Card>
+            </Link>
         </div>
     )
 }

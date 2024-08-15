@@ -5,14 +5,17 @@ import { Grid } from '@mui/material'
 const MovieList = (props) => {
     return (
         <div>
-            {props.movies.map((m) => {
-                return (
-                    <MovieCard
-                        key={m.id}
-                        pelicula={m}
-                    />
-                )
-            })}
+            <Grid container spacing={3}>
+                {props.movies.map((m) => {
+                    return (
+                        <Grid item key={m.id} xs={12} md={6} lg={3}>
+                            <MovieCard
+                                pelicula={m}
+                            />
+                        </Grid>
+                    )
+                })}
+            </Grid>
         </div>
     )
 }
